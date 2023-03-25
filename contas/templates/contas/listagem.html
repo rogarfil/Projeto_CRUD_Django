@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Django - Listagem</title>
+</head>
+<body>
+
+    <h2>Listagem</h2>
+
+    <ol>
+        {%for transacao in transacoes %}
+            <li><a href="{% url 'url_editar' transacao.id %}">{{ transacao.descricao }} - {{ transacao.data }} - R$ {{ transacao.valor }} - {{ transacao.categoria }}</a></li>
+        {% endfor %}
+    </ol>
+
+    <a href="{% url 'url_cadastro' %}">Cadastro Receitas & Despesas</a>
+
+</body>
+</html>
